@@ -1,35 +1,37 @@
 package model
 
 type Trail struct {
-	Question []int
+	Question string
 }
 
 type Item struct {
-	Trails []Trail
+	Trails [2]Trail
 }
 
 type Forward struct {
-	Items []Item
+	Items [8]Item
 	score int
 }
 
-func init() {
-	f := Forward{}
+var Fmodal Forward
 
-	f.Items[0].Trails[0].Question = []int{1, 7}
-	f.Items[0].Trails[1].Question = []int{6, 3}
-	f.Items[1].Trails[0].Question = []int{5, 8, 2}
-	f.Items[1].Trails[1].Question = []int{6, 9, 4}
-	f.Items[2].Trails[0].Question = []int{6, 4, 3, 9}
-	f.Items[2].Trails[1].Question = []int{7, 2, 8, 6}
-	f.Items[3].Trails[0].Question = []int{4, 2, 7, 3, 1}
-	f.Items[3].Trails[1].Question = []int{7, 5, 8, 3, 6}
-	f.Items[4].Trails[0].Question = []int{6, 1, 9, 4, 7, 3}
-	f.Items[4].Trails[1].Question = []int{3, 9, 2, 4, 8, 7}
-	f.Items[5].Trails[0].Question = []int{5, 9, 1, 7, 4, 2, 8}
-	f.Items[5].Trails[1].Question = []int{4, 1, 7, 9, 3, 8, 6}
-	f.Items[6].Trails[0].Question = []int{5, 8, 1, 9, 2, 6, 4, 7}
-	f.Items[6].Trails[1].Question = []int{3, 8, 2, 9, 5, 1, 7, 4}
-	f.Items[7].Trails[0].Question = []int{2, 7, 5, 8, 6, 2, 5, 8, 4}
-	f.Items[7].Trails[1].Question = []int{7, 1, 3, 9, 4, 2, 5, 6, 8}
+func init() {
+	Fmodal = Forward{}
+
+	Fmodal.Items[0].Trails[0].Question = "17"
+	Fmodal.Items[0].Trails[1].Question = "63"
+	Fmodal.Items[1].Trails[0].Question = "582"
+	Fmodal.Items[1].Trails[1].Question = "694"
+	Fmodal.Items[2].Trails[0].Question = "6439"
+	Fmodal.Items[2].Trails[1].Question = "7286"
+	Fmodal.Items[3].Trails[0].Question = "42731"
+	Fmodal.Items[3].Trails[1].Question = "75836"
+	Fmodal.Items[4].Trails[0].Question = "619473"
+	Fmodal.Items[4].Trails[1].Question = "392487"
+	Fmodal.Items[5].Trails[0].Question = "5917428"
+	Fmodal.Items[5].Trails[1].Question = "4179386"
+	Fmodal.Items[6].Trails[0].Question = "58192647"
+	Fmodal.Items[6].Trails[1].Question = "38295174"
+	Fmodal.Items[7].Trails[0].Question = "275862584"
+	Fmodal.Items[7].Trails[1].Question = "713942568"
 }
