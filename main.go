@@ -28,9 +28,9 @@ func initlizeRouter() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/register", routes.UserRegister)
-	r.HandleFunc("/digitspan/digitforward/item/{itemid}/trail/{trailid}", DigitsForward)
-	r.HandleFunc("/digitspan/digitbackward/item/{itemid}/trail/{trailid}", DigitsBackward)
-	r.HandleFunc("/digitspan/LetterNumberSequencing/item/{itemid}/trail/{trailid}", LetterNumberSequencing)
+	r.HandleFunc("/digitspan/digitforward/item/{itemid}/trail/{trailid}", routes.DigitsForward)
+	r.HandleFunc("/digitspan/digitbackward/item/{itemid}/trail/{trailid}", routes.DigitsBackward)
+	r.HandleFunc("/digitspan/LetterNumberSequencing/item/{itemid}/trail/{trailid}", routes.LetterNumberSequencing)
 
 	fmt.Println("server is listening:", port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
