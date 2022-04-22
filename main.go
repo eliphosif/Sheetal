@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -27,6 +28,7 @@ func initlizeRouter() {
 
 	r := mux.NewRouter()
 
+	r.HandleFunc("/home", home)
 	r.HandleFunc("/register", routes.UserRegister)
 	r.HandleFunc("/digitspan/digitforward/item/{itemid}/trail/{trailid}", routes.DigitsForward)
 	r.HandleFunc("/digitspan/digitbackward/item/{itemid}/trail/{trailid}", routes.DigitsBackward)
@@ -34,6 +36,10 @@ func initlizeRouter() {
 
 	fmt.Println("server is listening:", port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
+}
+
+func home(w http.ResponseWriter, r *http.Request) {
+	io.WriteString(w, "Home")
 }
 
 /*

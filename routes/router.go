@@ -7,8 +7,19 @@ import (
 	"strconv"
 
 	"github.com/eliphosif/Sheetal/model"
-	"github.com/eliphosif/Sheetal/vendor/github.com/gorilla/mux"
+	"github.com/gorilla/mux"
 )
+
+type User struct {
+	id   int
+	name string
+	age  int
+}
+
+type AnswerResponse struct {
+	User
+	answer string
+}
 
 func UserRegister(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
@@ -24,6 +35,7 @@ func UserRegister(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func DigitsForward(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("inside digits forward")
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r) // get the parameters
 	//digitspan/digitforward/item/{itemid}/trail/{trailid}
@@ -36,8 +48,21 @@ func DigitsForward(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	fmt.Println(itemid, trailid)
+
+	itemsLength := len(model.Fmodal.Items)
+	if itemid <= itemsLength {
+
+		trailLength := len(model.Fmodal.Items[itemid].Trails)
+		if trailid > trailLength {
+			fmt.Fprintf(w, "please correct your url, Thankyou")
+			return
+		}
+	} else {
+		fmt.Fprintf(w, "please correct your url, Thankyou")
+		return
+	}
 	if r.Method == "GET" {
-		q := model.Fmodal.Items[0].Trails[0].Question
+		q := model.Fmodal.Items[itemid].Trails[trailid].Question
 		fmt.Fprintf(w, q)
 		return
 	} else if r.Method == "POST" {
