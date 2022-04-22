@@ -6,21 +6,16 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/eliphosif/Sheetal/routes"
 	"github.com/eliphosif/Sheetal/user"
 
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 var myUser user.User
 
-var AllCustomers *mongo.Collection
-
 func main() {
 
-	AllCustomers = initlizeMongoConnection()
 	initlizeRouter()
 }
 
@@ -32,19 +27,21 @@ func initlizeRouter() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/register", UserRegister).Methods("GET")
-	r.HandleFunc("/digitspan/digitforward/item/{itemid}/trail/{trailid}", DigitsForward).Methods("GET")
-
-	r.HandleFunc("/digitspan/digitbackward/item/{itemid}/trail/{trailid}", DigitsBackward).Methods("GET")
-	r.HandleFunc("/api/customers", getCustomers).Methods("GET")
-	r.HandleFunc("/api/customer/{id}", getCustomer).Methods("GET")
+	r.HandleFunc("/register", routes.UserRegister)
+	r.HandleFunc("/digitspan/digitforward/item/{itemid}/trail/{trailid}", DigitsForward)
+	r.HandleFunc("/digitspan/digitbackward/item/{itemid}/trail/{trailid}", DigitsBackward)
+	r.HandleFunc("/digitspan/LetterNumberSequencing/item/{itemid}/trail/{trailid}", LetterNumberSequencing)
 
 	fmt.Println("server is listening:", port)
 	log.Fatal(http.ListenAndServe(":"+port, r))
-
 }
 
-func initlizeMongoConnection() *mongo.Collection {
+/*
+
+	  = initlizeMongoConnection()
+var Survey *mongo.Collection
+var ctx = context.Background()
+func initlizeMongoConnection() (result []*mongo.Collection) {
 
 	err := godotenv.Load()
 	if err != nil {
@@ -59,8 +56,15 @@ func initlizeMongoConnection() *mongo.Collection {
 	//defer cancel()
 	client, _ := mongo.Connect(ctx, options.Client().ApplyURI(MongoDBURI))
 
-	golangMongoDB := client.Database("GolangMongo")
-	AllCustomers := golangMongoDB.Collection("AllCustomers")
-	return AllCustomers
+	golangMongoDB := client.Database("Survey")
+	DigitsForward := golangMongoDB.Collection("DigitsForward")
+	result = (append(result, DigitsForward))
+	DigitsBackward := golangMongoDB.Collection("DigitsBackward")
+	result = (append(result, DigitsBackward))
+	LetterNumberSequencing := golangMongoDB.Collection("LetterNumberSequencing")
+	result = (append(result, LetterNumberSequencing))
+
+	return result
 
 }
+*/
