@@ -13,7 +13,7 @@ func UserRegister(w http.ResponseWriter, r *http.Request) {
 
 	} else {
 
-		fmt.Fprintf(w, "Please provide valid login details")
+		fmt.Fprintf(w, "please register to take the survey, Thankyou")
 		return
 	}
 }
@@ -25,7 +25,7 @@ func DigitsBackward(w http.ResponseWriter, r *http.Request) {
 
 	} else {
 
-		fmt.Fprintf(w, "Please provide valid login details")
+		fmt.Fprintf(w, "please register to take the survey, Thankyou")
 		return
 	}
 }
@@ -37,7 +37,7 @@ func LetterNumberSequencing(w http.ResponseWriter, r *http.Request) {
 
 	} else {
 
-		fmt.Fprintf(w, "Please provide valid login details")
+		fmt.Fprintf(w, "please register to take the survey, Thankyou")
 		return
 	}
 }
