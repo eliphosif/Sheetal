@@ -29,7 +29,7 @@ func initlizeRouter() {
 	r := mux.NewRouter()
 
 	r.HandleFunc("/home", home)
-	r.HandleFunc("/register", routes.UserRegister)
+	r.HandleFunc("/register", routes.UserRegister).Methods("POST")
 	r.HandleFunc("/digitspan/digitforward/item/{itemid}/trail/{trailid}", routes.DigitsForward)
 	r.HandleFunc("/digitspan/digitbackward/item/{itemid}/trail/{trailid}", routes.DigitsBackward)
 	r.HandleFunc("/digitspan/LetterNumberSequencing/item/{itemid}/trail/{trailid}", routes.LetterNumberSequencing)
