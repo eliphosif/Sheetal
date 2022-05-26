@@ -1,0 +1,27 @@
+mode: set
+github.com/eliphosif/Sheetal/uitl/scan.go:9.74,10.28 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:15.2,15.14 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:10.28,11.47 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:11.47,13.4 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:18.69,19.28 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:24.2,24.14 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:19.28,20.63 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:20.63,22.4 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:27.60,28.26 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:53.2,53.12 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:28.26,29.24 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:30.16,31.32 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:35.15,36.35 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:39.31,40.34 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:31.32,34.5 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:36.35,38.5 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:40.34,42.5 1 0
+github.com/eliphosif/Sheetal/uitl/scan.go:42.10,42.58 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:42.58,43.44 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:43.44,46.6 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:47.10,50.5 1 0
+github.com/eliphosif/Sheetal/uitl/scan.go:55.52,57.58 2 1
+github.com/eliphosif/Sheetal/uitl/scan.go:60.2,60.52 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:63.2,63.23 1 1
+github.com/eliphosif/Sheetal/uitl/scan.go:57.58,59.3 1 0
+github.com/eliphosif/Sheetal/uitl/scan.go:60.52,62.3 1 0
